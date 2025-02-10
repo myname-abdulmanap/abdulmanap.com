@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-color: #000000;
   --text-color: #e8e8e8;
@@ -36,6 +40,10 @@
   --container-color: #232424;
   --text-header: #ffffff;
   --color-btn-primary:#2563eb;
+  --color-features:#000000;
+  --color-bar: rgb(244, 230, 181);
+  --color-card:  #2c2b2b;
+  --color-contact:#232424;
 }
 
 [data-theme="dark"] {
@@ -47,6 +55,9 @@
   --container-color: #0e5ece;
   --text-header: #ffffff;
   --color-btn-primary:#ffffff;
+  --color-features:#f8fafc;
+  --color-card: #ffffff;
+  --color-contact:#ffffff;
 }
 
 
@@ -80,6 +91,26 @@ body {
   overflow-x: hidden;
   color: var(--dark);
 }
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
@@ -154,7 +185,10 @@ header.white {
 }
 
 header.white .logo a:hover {
-  color: var(--primary);
+  color: var(--color-bar);
+}
+header.transparent .logo a:hover {
+  color: var(--color-bar);
 }
 
 header.white .logo a {
@@ -170,7 +204,7 @@ header.white .logo a {
 .menu a {
   text-decoration: none;
   color: var(--text-color);
-  font-weight: 500;
+  font-weight: bold;
   transition: color 0.3s;
   font-size: 1.1rem;
 }
@@ -182,9 +216,12 @@ header.white .menu a {
 header.transparent .menu a {
   color: var(--light);
 }
+header.transparent .menu a:hover {
+  color: var(--color-bar);
+}
 
 header.white .menu a:hover {
-  color: var(--primary);
+  color: var(--color-bar);
 }
 
 
@@ -353,7 +390,7 @@ header.white .bar {
 /* Features Section */
 .features {
   padding: 8rem 1rem;
-  background: var(--light);
+  background: var(--color-features);
 }
 
 .features-container {
@@ -386,7 +423,7 @@ header.white .bar {
 }
 
 .feature-card {
-  background: white;
+  background: var(--color-card);
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -577,7 +614,7 @@ header.white .bar {
 /* Contact Section */
 .contact {
   padding: 8rem 1rem;
-  background: white;
+  background: var(--color-contact);
 }
 
 .contact-container {
@@ -603,7 +640,7 @@ header.white .bar {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: var(--dark);
+  color: var(--text-color);
   font-weight: 500;
 }
 
@@ -694,6 +731,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+  .logo a {
+    font-size: 1.0rem;
+  }
   .hero h1 {
     font-size: 2.5rem;
   }

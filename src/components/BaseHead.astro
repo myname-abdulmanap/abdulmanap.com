@@ -1,11 +1,13 @@
 ---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
+	title: string;
+	description: string;
+	image?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -16,18 +18,17 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Ensures better rendering in IE -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href={new URL('rss.xml', Astro.site)} />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={SITE_TITLE}
+	href={new URL('rss.xml', Astro.site)}
+/>
 <meta name="generator" content={Astro.generator} />
 
-<!-- Social Media and SEO Meta Tags -->
-<meta name="robots" content="index, follow" />
-<meta name="author" content="Your Name or Company" />
-<meta name="keywords" content="web development, coding, tech, portfolio, your specific keywords here" />
-
-<!-- Font Preloads -->
+<!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
@@ -45,7 +46,6 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
-<meta property="og:image:alt" content="Image description for SEO" /> <!-- Optional, to describe the image in social shares -->
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -54,11 +54,4 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Additional Meta Tags (optional) -->
-<meta name="apple-mobile-web-app-title" content={SITE_TITLE} />
-<meta name="theme-color" content="#ffffff" /> <!-- Specify the color of the browser's UI elements -->
-<meta name="msapplication-TileColor" content="#ffffff" /> <!-- For Windows Tiles -->
-<meta name="msapplication-TileImage" content="/mstile-144x144.png" /> <!-- Windows 8 tiles -->
 
-<!-- Additional Metadata for better performance -->
-<!-- <link rel="manifest" href="/site.webmanifest" /> Web app manifest -->
