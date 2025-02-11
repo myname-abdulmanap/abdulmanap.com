@@ -1,0 +1,453 @@
+---
+// PortfolioSection.astro
+interface Portfolio {
+  title: string;
+  description: string;
+  imageUrl: string;
+  category: string;
+  tags: string[];
+  link: string;
+  github?: string;
+}
+
+const portfolioItems: Portfolio[] = [
+  {
+    title: "E-Commerce Website",
+    description:
+      "Modern e-commerce platform dengan fitur pembayaran terintegrasi.",
+    imageUrl: "/blog-placeholder-1.jpg",
+    category: "Web Development",
+    tags: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    github: "https://github.com/username/project1",
+  },
+  {
+    title: "Food Delivery App",
+    description:
+      "Aplikasi mobile untuk pemesanan makanan dengan tracking realtime.",
+    imageUrl: "/blog-placeholder-2.jpg",
+    category: "Mobile Development",
+    tags: ["Flutter", "Firebase", "Maps"],
+    link: "#",
+    github: "https://github.com/username/project2",
+  },
+  {
+    title: "Company Portfolio",
+    description: "Website portfolio perusahaan dengan animasi modern.",
+    imageUrl: "/blog-placeholder-3.jpg",
+    category: "Web Development",
+    tags: ["Vue.js", "GSAP", "Tailwind"],
+    link: "#",
+    github: "https://github.com/username/project3",
+  },
+  {
+    title: "Fitness Tracking App",
+    description: "Aplikasi mobile untuk tracking aktivitas fitness.",
+    imageUrl: "/blog-placeholder-4.jpg",
+    category: "Mobile Development",
+    tags: ["React Native", "Redux"],
+    link: "#",
+    github: "https://github.com/username/project4",
+  },
+  {
+    title: "UI/UX Design System",
+    description: "Design system lengkap untuk produk digital.",
+    imageUrl: "/blog-placeholder-5.jpg",
+    category: "UI/UX Design",
+    tags: ["Figma", "Design System"],
+    link: "#",
+    github: "https://github.com/username/project5",
+  },
+];
+
+const categories = [
+  "All",
+  ...new Set(portfolioItems.map((item) => item.category)),
+];
+
+const tagColors = [
+  { bg: "rgb(255, 228, 230)", text: "rgb(225, 29, 72)" }, // Red
+  { bg: "rgb(224, 242, 254)", text: "rgb(14, 165, 233)" }, // Blue
+  { bg: "rgb(220, 252, 231)", text: "rgb(22, 163, 74)" }, // Green
+  { bg: "rgb(255, 237, 213)", text: "rgb(234, 88, 12)" }, // Orange
+  { bg: "rgb(243, 232, 255)", text: "rgb(147, 51, 234)" }, // Purple
+  { bg: "rgb(254, 242, 242)", text: "rgb(220, 38, 38)" }, // Dark Red
+  { bg: "rgb(236, 254, 255)", text: "rgb(8, 145, 178)" }, // Cyan
+];
+
+function getTagColor(tagIndex: number) {
+  return tagColors[tagIndex % tagColors.length];
+}
+---
+
+<section class="portfolio-section">
+  <div class="container">
+    <div class="section-title fade-in">
+        <h2>Portfolio 💻</h2>
+        <p class="fade-in">Building Best Web Apps</p>
+
+    </div>
+  
+    <br/>
+
+    <div class="tabs-container">
+      <div class="tabs fade-in">
+        {
+          categories.map((category) => (
+            <button class="tab-button" data-category={category}>
+              {category}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="portfolio-grid">
+      {
+        portfolioItems.map((item) => (
+          <article class="portfolio-card fade-in" data-category={item.category}>
+            <div class="portfolio-image">
+              <img src={item.imageUrl} alt={item.title} loading="lazy" />
+              <div class="overlay">
+                <div class="button-group">
+                  <a href={item.link} class="view-project">
+                    View Project
+                  </a>
+                  {item.github && (
+                    <a
+                      href={item.github}
+                      class="github-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <div class="tags">
+                {item.tags.map((tag, index) => (
+                  <span
+                    class="tag"
+                    style={`background-color: ${getTagColor(index).bg}; color: ${getTagColor(index).text};`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-section {
+    padding: 4rem 0;
+    background-color: var(--bg-color);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+  }
+
+  .tabs-container {
+    margin-bottom: 2.5rem;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .tab-button {
+    padding: 0.625rem 1.25rem;
+    border: 2px solid transparent;
+    background: white;
+    color: #64748b;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .tab-button:hover {
+    border-color: rgb(244, 230, 181);
+    color: rgb(201, 176, 97);
+  }
+
+  .tab-button.active {
+    background: rgb(244, 230, 181);
+    color: #5c4f2c;
+    border-color: rgb(244, 230, 181);
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    background: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+  }
+
+  .portfolio-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    padding: 2px;
+    background: linear-gradient(
+      45deg,
+      rgb(244, 230, 181),
+      rgb(255, 183, 197),
+      rgb(181, 234, 244),
+      rgb(199, 244, 181)
+    );
+    background-size: 300% 300%;
+    animation: gradient-shift 5s ease infinite;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .portfolio-card:hover::before {
+    opacity: 1;
+  }
+
+  .portfolio-card.hidden {
+    display: none;
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px);
+  }
+
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .github-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .github-link svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .portfolio-card:hover .overlay {
+    opacity: 1;
+  }
+
+  .portfolio-card:hover .portfolio-image img {
+    transform: scale(1.05);
+  }
+
+  .portfolio-content {
+    padding: 1.25rem;
+  }
+
+  .portfolio-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  .portfolio-content p {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 0.875rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    padding: 0.25rem 0.625rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .view-project {
+    display: inline-block;
+    background: rgb(244, 230, 181);
+    color: #5c4f2c;
+    padding: 0.625rem 1.25rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+
+  .view-project:hover {
+    background: white;
+    color: rgb(201, 176, 97);
+    border-color: rgb(244, 230, 181);
+    box-shadow: 0 0 15px rgba(244, 230, 181, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.875rem;
+    }
+
+    .tabs {
+      gap: 0.5rem;
+    }
+
+    .tab-button {
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+</style>
+
+<!-- Script section remains the same as before -->
+<script>
+  function initializeTabs() {
+    const tabs = document.querySelectorAll(".tab-button");
+    const portfolioItems = document.querySelectorAll(".portfolio-card");
+
+    // Set "All" tab as active by default
+    const defaultTab = document.querySelector('[data-category="All"]');
+    if (defaultTab) {
+      defaultTab.classList.add("active");
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const selectedCategory = tab.dataset.category;
+
+        portfolioItems.forEach((item) => {
+          if (
+            selectedCategory === "All" ||
+            item.dataset.category === selectedCategory
+          ) {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.add("hidden");
+          }
+        });
+      });
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initializeTabs);
+</script>

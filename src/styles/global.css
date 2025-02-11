@@ -44,6 +44,7 @@ html {
   --color-bar: rgb(244, 230, 181);
   --color-card:  #2c2b2b;
   --color-contact:#232424;
+  --color-portfolio:#000000;
 }
 
 [data-theme="dark"] {
@@ -57,7 +58,8 @@ html {
   --color-btn-primary:#ffffff;
   --color-features:#f8fafc;
   --color-card: #ffffff;
-  --color-contact:#ffffff;
+  --color-contact:#fffcfc;
+  --color-portfolio: #ffffff;
 }
 
 
