@@ -7,15 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!header || !hamburger || !menu || !overlay) return;
 
- 
   const toggleMenu = () => {
     menu.classList.toggle("active");
     hamburger.classList.toggle("active");
     overlay.classList.toggle("active");
     document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "";
   };
-
-
   const updateHeader = () => {
     if (!heroSection) return;
     const scrollY = window.scrollY;
