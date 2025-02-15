@@ -2,7 +2,6 @@
 import { SITE_TITLE } from "../consts"
 import ThemeToggle from "./ThemeToggle.astro"
 ---
-
 <style>
 
 /* Header & Navigation */
@@ -16,14 +15,14 @@ header {
 
 header.transparent {
   background: transparent;
-  box-shadow: none;
+  /* box-shadow: 0 2px 20px rgba(148, 148, 148, 0.1); */
 
 }
 
 
 header.white {
   background: var(--bg-color);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 20px rgba(37, 37, 37, 0.1);
 
 }
 
@@ -65,7 +64,7 @@ header.white {
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
-  color: var(--text-header);
+  color: var(--text-color);
   font-weight: 700;
   font-size: 1.2rem;
   transition: color 0.3s;
@@ -100,7 +99,7 @@ header.white .logo h2:hover {
 }
 
 header.transparent .logo h2 {
-  color: var(--text-header);
+  color: var(--text-color);
 }
 header.transparent .logo h2:hover {
   color: var(--color-bar);
@@ -129,7 +128,7 @@ header.white .menu a {
 }
 
 header.transparent .menu a {
-  color: var(--light);
+  color: var(--text-color);
 }
 
 header.transparent .menu a:hover {
@@ -301,7 +300,8 @@ header.transparent .menu a {
 }
 }
 
-  </style>
+
+</style>
 <div class="overlay"></div>
 <header class="transparent">
     <div class="nav-container">
@@ -338,12 +338,8 @@ header.transparent .menu a {
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </button>
-        
-      </div>
-      
-  
-    
+        </button>       
+      </div> 
     </div>
   </header>
   

@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.5;
 }
 
 html {
@@ -19,11 +20,12 @@ html {
 
 :root {
   --bg-color: #000000;
+  --bg-main:  #232424;
   --text-color: #e8e8e8;
   --heading-color: #ffffff;
   --link-color: #0066cc;
   --border-color: #dddddd;
-  --accent: #2337ff;
+  --accent: rgb(244, 230, 181);
   --accent-dark: #000d8a;
   --black: 15, 18, 25;
   --gray: 96, 115, 159;
@@ -39,27 +41,29 @@ html {
   --dark: #0f172a;
   --container-color: #232424;
   --text-header: #ffffff;
-  --color-btn-primary:#2563eb;
-  --color-features:#000000;
+  --color-btn-primary: #2563eb;
+  --color-features: #000000;
   --color-bar: rgb(244, 230, 181);
-  --color-card:  #2c2b2b;
-  --color-contact:#232424;
-  --color-portfolio:#000000;
+  --color-card: #2c2b2b;
+  --color-contact: #232424;
+  --color-portfolio: #000000;
 }
 
 [data-theme="dark"] {
   --bg-color: #ffffff;
+  --bg-main:  #f2f2f2;
   --text-color: #2d2d2d;
   --heading-color: #000000;
   --link-color: #66b3ff;
   --border-color: #404040;
   --container-color: #0e5ece;
   --text-header: #ffffff;
-  --color-btn-primary:#ffffff;
-  --color-features:#f8fafc;
+  --color-btn-primary: #ffffff;
+  --color-features: #f8fafc;
   --color-card: #ffffff;
-  --color-contact:#fffcfc;
+  --color-contact: #fffcfc;
   --color-portfolio: #ffffff;
+
 }
 
 
@@ -87,12 +91,116 @@ html {
   font-family: "Atkinson", "Segoe UI", sans-serif;
 }
 
-
 body {
   line-height: 1.6;
   overflow-x: hidden;
-  color: var(--dark);
+  color: var(--bg-color);
+  word-wrap: break-word;
+	overflow-wrap: break-word;
 }
+
+
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 3.052em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+/* a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--accent);
+} */
+
+p {
+  margin-bottom: 1em;
+}
+
+.prose p {
+  margin-bottom: 2em;
+}
+
+textarea {
+  width: 100%;
+  font-size: 16px;
+}
+
+input {
+  font-size: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+code {
+  padding: 2px 5px;
+  background-color: rgb(var(--gray-light));
+  border-radius: 2px;
+}
+
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+}
+
+pre>code {
+  all: unset;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  padding: 0 0 0 20px;
+  margin: 0px;
+  font-size: 1.333em;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid rgb(var(--gray-light));
+}
+
+
+
 
 /* Animations */
 .fade-in {
@@ -112,175 +220,14 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
 
 
 
 
-/* Header & Navigation */
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.5s ease;
-
-}
-
-header.transparent {
-  background: transparent;
-  box-shadow: none;
-
-}
-
-
-header.white {
-  background: var(--bg-color);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-
-}
-
-
-
-
-.nav-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-icons {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-icons .icon {
-  margin-left: 20px;
-  font-size: medium;
-  color: #000000;
-  background-color: rgb(244, 230, 181);
-  transition: color 0.3s ease;
-  padding: 2px; /* Mengurangi padding untuk lebih ramping */
-  border-radius: 10px;
-}
-
-.navbar-icons .icon:hover {
-  color: #0073e6;
-}
-
-
-.logo a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--text-header);
-  font-weight: 700;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.logo a:hover {
-
-  color: var(--primary);
-}
-
-header.white .logo a:hover {
-  color: var(--color-bar);
-}
-header.transparent .logo a:hover {
-  color: var(--color-bar);
-}
-
-header.white .logo a {
-  color: var(--text-color);
-}
-
-.menu ul {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: bold;
-  transition: color 0.3s;
-  font-size: 1.1rem;
-}
-
-header.white .menu a {
-  color: var(--text-color);
-}
-
-header.transparent .menu a {
-  color: var(--light);
-}
-header.transparent .menu a:hover {
-  color: var(--color-bar);
-}
-
-header.white .menu a:hover {
-  color: var(--color-bar);
-}
-
-
-.menu a:hover {
-  color: var(--primary);
-}
-
-.bar {
-  display: block;
-  width: 27px;
-  height: 6px;
-  margin: 3px;
-  background-color: rgb(244, 230, 181);
-  transition: 0.3s;
-}
-
-header.white .bar {
-  background-color: rgb(229, 207, 129);
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 15px;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
-  pointer-events: none;
-}
-
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
 .btn {
   display: inline-block;
@@ -511,6 +458,10 @@ header.white .bar {
     font-size: 0.8rem;
   }
 
+  .logo h2 {
+    font-size: 1.2rem;
+  }
+
 
   .features-grid {
     grid-template-columns: 1fr;
@@ -566,7 +517,7 @@ header.white .bar {
   header.transparent .menu a {
     color: var(--text-color);
   }
-  
+
 
   .menu.active {
     left: 0;
@@ -598,5 +549,27 @@ header.white .bar {
 
   .hero h1 {
     font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-about {
+    display: inline-block;
+    padding: 0.75rem 1.8rem;
+    font-size: 0.9rem;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid var(--color-btn-primary);
   }
 }

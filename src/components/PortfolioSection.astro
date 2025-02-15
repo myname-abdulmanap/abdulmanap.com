@@ -318,106 +318,98 @@ function getTagColor(tagIndex: number) {
   .hidden {
     display: none;
   }
-
-  /* Tablet Breakpoint */
-  @media (max-width: 1024px) {
-    .portfolio-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    .card-image {
-      height: 200px;
-    }
+/* Tablet Breakpoint */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
-  /* Mobile Breakpoint */
-  @media (max-width: 768px) {
-    .portfolio-section {
-      padding: 3rem 1rem;
-    }
+  .card-image {
+    height: 200px;
+  }
+}
 
-    .section-header h2 {
-      font-size: 2rem;
-    }
-
-    .section-header p {
-      font-size: 1rem;
-    }
-
-    .portfolio-grid {
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1rem;
-    }
-
-    .card-image {
-      height: 120px;
-    }
-
-    .card-content {
-      padding: 0.75rem;
-    }
-
-    .card-content h3 {
-      font-size: 0.9rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .card-content p {
-      font-size: 0.75rem;
-      margin-bottom: 0.75rem;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .tag {
-      padding: 0.2rem 0.5rem;
-      font-size: 0.65rem;
-    }
-
-    .btn-view {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.75rem;
-    }
-
-    .btn-github {
-      width: 32px;
-      height: 32px;
-    }
-
-    .tab {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.8rem;
-    }
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2rem;
   }
 
-  /* Small Mobile Breakpoint */
-  @media (max-width: 480px) {
-    .portfolio-grid {
-      gap: 0.75rem;
-    }
-
-    .card-image {
-      height: 110px;
-    }
-
-    .card-content {
-      padding: 0.6rem;
-    }
-
-    .btn-view {
-      padding: 0.35rem 0.7rem;
-      font-size: 0.7rem;
-    }
-
-    .btn-github {
-      width: 28px;
-      height: 28px;
-    }
+  .section-header p {
+    font-size: 1rem;
   }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .card-image {
+    height: 120px;
+  }
+
+  .card-content {
+    padding: 0.75rem;
+  }
+
+  .card-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-content p {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tag,
+  .btn-view,
+  .tab {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .btn-github {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .card-image {
+    height: 110px;
+  }
+
+  .card-content {
+    padding: 0.6rem;
+  }
+  .tag {
+    font-size: 0.6rem;
+    /* padding: 0.4rem 0.8rem; */
+
+  }
+  .btn-view {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .btn-github {
+    width: 28px;
+    height: 28px;
+  }
+}
 </style>
 
 <script>

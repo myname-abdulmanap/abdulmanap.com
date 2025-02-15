@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger") as HTMLButtonElement | null;
   const menu = document.querySelector(".menu") as HTMLElement | null;
   const overlay = document.querySelector(".overlay") as HTMLElement | null;
-  const heroSection = document.querySelector(".hero") as HTMLElement | null;
 
   if (!header || !hamburger || !menu || !overlay) return;
 
@@ -13,21 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.classList.toggle("active");
     document.body.style.overflow = menu.classList.contains("active") ? "hidden" : "";
   };
-  const updateHeader = () => {
-    if (!heroSection) return;
-    const scrollY = window.scrollY;
 
-    if (scrollY > heroSection.offsetHeight / 5) { 
+  const updateHeader = () => {
+    const scrollY = window.scrollY; // Ambil posisi scroll
+    if (scrollY > 50) { // Jika scroll lebih dari 50px
+      header.classList.add("white"); // Tambahkan kelas putih
       header.classList.remove("transparent");
-      header.classList.add("white");
     } else {
       header.classList.add("transparent");
       header.classList.remove("white");
     }
   };
 
+  // Event Listener
   hamburger.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
   window.addEventListener("scroll", updateHeader);
-  updateHeader(); 
+
+  updateHeader(); // Pastikan header di-update saat halaman dimuat
 });

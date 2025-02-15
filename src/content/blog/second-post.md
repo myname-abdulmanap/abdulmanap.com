@@ -1,6 +1,6 @@
 ---
-title: 'Second post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Second post for testing my personal blog'
+description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium.'
 pubDate: 'Jul 15 2022'
 heroImage: '/blog-placeholder-4.jpg'
 ---
