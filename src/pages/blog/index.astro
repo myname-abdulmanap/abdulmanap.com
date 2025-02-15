@@ -15,10 +15,11 @@ const posts = (await getCollection("blog")).sort(
 
 <!doctype html>
 <html lang="en">
-  <ClientRouter />
+ 
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
   <body>
+    <ClientRouter />
     <Header />
     <BlogHeroSection />
     <main>
