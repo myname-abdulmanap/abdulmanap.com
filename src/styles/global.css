@@ -20,7 +20,7 @@ html {
 
 :root {
   --bg-color: #000000;
-  --bg-main:  #232424;
+  --bg-main: #232424;
   --text-color: #e8e8e8;
   --heading-color: #ffffff;
   --link-color: #0066cc;
@@ -51,7 +51,7 @@ html {
 
 [data-theme="dark"] {
   --bg-color: #ffffff;
-  --bg-main:  #f2f2f2;
+  --bg-main: #f2f2f2;
   --text-color: #2d2d2d;
   --heading-color: #000000;
   --link-color: #66b3ff;
@@ -96,7 +96,7 @@ body {
   overflow-x: hidden;
   color: var(--bg-color);
   word-wrap: break-word;
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 
@@ -220,11 +220,6 @@ hr {
   opacity: 1;
   transform: translateY(0);
 }
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
-.delay-4 { animation-delay: 0.8s; }
-
 
 
 
@@ -282,7 +277,7 @@ hr {
 .section-title h2 {
   font-size: 2.8rem;
   margin-bottom: 0.5rem;
-  color: var(--heading-color);
+  color: var(--text-color);
 }
 
 .section-title p {
@@ -293,7 +288,7 @@ hr {
 /* CTA Section */
 .cta {
   padding: 6rem 1rem;
-  background: var(--dark);
+  background: var(--container-color);
   color: white;
   text-align: center;
 }
@@ -321,12 +316,14 @@ hr {
 
 .pricing {
   padding: 8rem 1rem;
-  background: white;
+  background: var(--bg-color);
+ 
 }
 
 .pricing-container {
   max-width: 1200px;
   margin: 0 auto;
+  color: var(--text-color);
 }
 
 .pricing-grid {
@@ -337,12 +334,13 @@ hr {
 }
 
 .pricing-card {
-  background: var(--light);
+  background: var(--color-bar);
   padding: 3rem 2rem;
   border-radius: 1rem;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  color: var(--dark);
 }
 
 .pricing-card.popular {
@@ -382,7 +380,7 @@ hr {
 /* Testimonials Section */
 .testimonials {
   padding: 8rem 1rem;
-  background: var(--light);
+  background: var(--bg-color);
 }
 
 .testimonials-container {

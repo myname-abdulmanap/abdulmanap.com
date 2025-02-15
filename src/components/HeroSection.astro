@@ -4,17 +4,20 @@
 
 <section class="hero">
   <div class="hero-container">
-    <h2 class="fade-in">
+    <h2 class="fade-in delay-1">
       Hello <br />Everyone <span class="wave">👋</span><br />
     </h2>
 
-    <div class="profile-image" id="about">
-      <img src="/assets/img/abdul-manap-software-developer.webp" alt="Abdul Manap" />
+    <div class="profile-image fade-in delay-2" id="about">
+      <img
+        src="/assets/img/abdul-manap-software-developer.webp"
+        alt="Abdul Manap"
+      />
     </div>
 
-    <span class="typing-text-sub fade-in">My name is</span>
+    <span class="typing-text-sub fade-in delay-3">My name is</span>
 
-    <br /><span class="typing-text fade-in"
+    <br /><span class="typing-text fade-in delay-4"
       >Abdul Manap <span class="peace">✌️</span></span
     >
 
@@ -74,7 +77,7 @@
   }
 
   .typing-text {
-    color:  rgb(244, 230, 181);;
+    color: rgb(244, 230, 181);
     font-weight: bold;
     font-size: 2.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -111,65 +114,52 @@
   }
 
   .wave {
-        display: inline-block;
-        animation: wave 2.5s infinite;
-        transform-origin: 70% 70%;
-      }
+    display: inline-block;
+    animation: wave 2.5s infinite;
+    transform-origin: 70% 70%;
+  }
 
-      @keyframes wave {
-        0% {
-          transform: rotate(0deg);
-        }
-        10% {
-          transform: rotate(14deg);
-        }
-        20% {
-          transform: rotate(-8deg);
-        }
-        30% {
-          transform: rotate(14deg);
-        }
-        40% {
-          transform: rotate(-4deg);
-        }
-        50% {
-          transform: rotate(10deg);
-        }
-        60% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(0deg);
-        }
-      }
+  @keyframes wave {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(14deg);
+    }
+    20% {
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform: rotate(14deg);
+    }
+    40% {
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
-      .peace {
-        display: inline-block;
-        transition: transform 0.3s ease;
-      }
-      .typing-text:hover .peace {
-        transform: rotate(15deg);
-      }
+  .peace {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  .typing-text:hover .peace {
+    transform: rotate(15deg);
+  }
 
-      /* .delay-1 {
-        animation-delay: 0.3s;
-      }
-      .delay-2 {
-        animation-delay: 0.6s;
-      }
-      .delay-3 {
-        animation-delay: 0.9s;
-      }
-      .delay-4 {
-        animation-delay: 1.2s;
-      } */
-
-      @keyframes scaleIn {
-        to {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
+  @keyframes scaleIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   @media (max-width: 768px) {
     .hero h1 {
@@ -180,6 +170,4 @@
       font-size: 1.25rem;
     }
   }
-
-  
 </style>

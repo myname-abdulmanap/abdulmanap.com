@@ -4,24 +4,26 @@ import BaseHead from "../components/BaseHead.astro";
 import HeaderBlog from "../components/HeaderBlog.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import HeaderBlogSection from "../components/HeaderBlogSection.astro";
+
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+import { ClientRouter } from "astro:transitions";
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    <ClientRouter />
     <style>
-main {
-  width: 100%;
-  max-width: 100%;
-  margin: auto;
-  padding: 3em 1em;
-  background-color: var(--bg-color);
-}
+      main {
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+        padding: 3em 1em;
+        background-color: var(--bg-color);
+      }
       .blog {
         width: 800px;
         max-width: calc(100% - 2em);
@@ -38,18 +40,15 @@ main {
         border-radius: 12px;
         /* box-shadow: var(--box-shadow); */
       }
-	.prose {
-	font-size:1.2rem;
-    width: 720px;
-    max-width: calc(100% - 2em);
-    margin: auto;
-    margin-top: 20px;
-    padding: 1em;
-    color: var(--text-color);
-	opacity: 0.9;
-	
+      .prose {
+        font-size: 1.2rem;
 
-}
+        margin: auto;
+        margin-top: 20px;
+        padding: 1em;
+        color: var(--text-color);
+        opacity: 0.9;
+      }
 
       .title {
         margin-bottom: 1em;
@@ -61,191 +60,221 @@ main {
       }
       .date {
         margin-bottom: 0.5em;
-		color: var(--text-color);
+        color: var(--text-color);
       }
       .last-updated-on {
         font-style: italic;
       }
 
-	  .blog-hero {
-      background: var(--container-color);
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      padding: 6rem 1.5rem;
-      position: relative;
-    }
-  
-    .hero-container {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-  
-    .category-tag {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      color: rgb(255, 255, 255);
-      padding: 0.5rem 1rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
-      font-weight: 500;
-      margin-top: 20px;
-    }
-  
-    .hero-title {
-      font-size: 3.5rem;
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-      color: var(--text-header);
-      font-weight: 800;
-    }
-  
-    .hero-description {
-      font-size: 1.25rem;
-      max-width: 700px;
-      color: var(--text-color);
-      opacity: 0.9;
-    }
-  
-    .author-section {
-      display: flex;
-      align-items: center;
-      justify-content: left;
-      margin-bottom: 2.5rem;
-      gap: 1rem;
-    }
-  
-    .author-image {
-      width: 60px;
-      height: 60px;
-    }
-  
-    .author-image img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--text-color);
-    }
-  
-    .author-info {
-      text-align: left;
-
-    }
-  
-    .author-name {
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-color);
-    }
-  
-    .author-title {
-      font-size: 0.9rem;
-      color: var(--text-color);
-      opacity: 0.8;
-    }
-
-	.date-text {
-		font-size: 0.9rem;
-      color: var(--text-color);
-      opacity: 0.8;
-	}
-  
-    .stats-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-	  color: var(--text-header);
-    }
-  
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-  
-    .stat-number {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-header);
-    }
-  
-    .stat-label {
-      font-size: 0.9rem;
-      color: var(--text-header);
-      opacity: 0.8;
-    }
-  
-    .stat-divider {
-      width: 1px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.1);
-    }
-  
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 0.5s ease forwards;
-    }
-  
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  
-    .delay-1 {
-      animation-delay: 0.2s;
-    }
-    .delay-2 {
-      animation-delay: 0.4s;
-    }
-    .delay-3 {
-      animation-delay: 0.6s;
-    }
-    .delay-4 {
-      animation-delay: 0.8s;
-    }
-  
-    /* Responsive Design */
-    @media (max-width: 768px) {
       .blog-hero {
-        padding: 4rem 1rem;
-        min-height: 60vh;
+        background: var(--container-color);
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        padding: 6rem 1.5rem;
+        position: relative;
       }
-  
+
+      .hero-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .category-tag {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        color: rgb(255, 255, 255);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: var(--text-header);
+        font-weight: 800;
       }
-  
+
       .hero-description {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
+        max-width: 700px;
+        color: var(--text-color);
+        opacity: 0.9;
       }
-  
+
+      .author-section {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 2.5rem;
+        gap: 1rem;
+      }
+
+      .author-image {
+        width: 60px;
+        height: 60px;
+      }
+
+      .author-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--text-color);
+      }
+
+      .author-info {
+        text-align: left;
+      }
+
+      .author-name {
+        display: block;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .author-title {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+
+      .date-text {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        opacity: 0.8;
+      }
+
       .stats-section {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
+        color: var(--text-header);
       }
-  
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-header);
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-header);
+        opacity: 0.8;
+      }
+
       .stat-divider {
-        display: none;
+        width: 1px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
       }
-    }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+      .delay-4 {
+        animation-delay: 0.8s;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .blog-hero {
+          padding: 4rem 1rem;
+          min-height: 60vh;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+        }
+
+        .stats-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.5rem;
+        }
+
+        .stat-divider {
+          display: none;
+        }
+        main {
+          width: 100%;
+          max-width: 100%;
+          margin: auto;
+          padding: 2em 1em;
+        }
+
+        .prose {
+          width: 100%;
+          max-width: calc(100% - 2em);
+          margin: 10px;
+          font-size: 1rem;
+          padding: 0.8em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        main {
+          width: 100%;
+          max-width: 100%;
+          margin: auto;
+          padding: 1em 0em;
+        }
+
+        .prose {
+          width: 100%;
+          max-width: calc(100% - 2em);
+          margin-top: 30px;
+          font-size: 1rem;
+          padding: 0em;
+        }
+      }
     </style>
   </head>
 
   <body>
     <HeaderBlog />
-	
-<!-- <section class="blog-hero">
+
+    <!-- <section class="blog-hero">
     <div class="hero-container">
       <div class="category-tag">Personal Blog</div>
       <h1 class="hero-title fade-in delay-1">
@@ -273,41 +302,44 @@ main {
 </section> -->
     <main>
       <article class="blog">
-		 <div class="title fade-in">
-			<h1>
-				{title}
-			</h1> 
-			<div class="date">
-				<p class="hero-description">
-					{description} 
-				</p>
-					<hr /> <br />
-					<div class="author-section fade-in delay-3">
-						<div class="author-image">
-						  <img
-							src="/assets/img/abdul-manap-software-developer.webp"
-							alt="Abdul Manap"
-						  />
-						</div>
-						<div class="author-info">
-						  <span class="author-name">Abdul Manap</span>
-						  <span class="author-title">Software Developer & Tech Enthusiast</span> 
-						  <br />
-						  <span class="date-text">Update on
-							<FormattedDate date={pubDate} />
-							{
-							  updatedDate && (
-								<div class="last-updated-on">
-								  Last updated on <FormattedDate date={updatedDate} />
-								</div>
-							  )
-							} 
-						  </div>
-					  </span>
-						</div>
-					</div>
-          
+        <div class="title">
+          <h1>
+            {title}
+          </h1>
+          <div class="date">
+            <p class="hero-description">
+              {description}
+            </p>
+            <hr />
+            <br />
+            <div class="author-section">
+              <div class="author-image">
+                <img
+                  src="/assets/img/abdul-manap-software-developer.webp"
+                  alt="Abdul Manap"
+                />
+              </div>
+              <div class="author-info">
+                <span class="author-name">Abdul Manap</span>
+                <span class="author-title"
+                  >Software Developer & Tech Enthusiast</span
+                >
+                <br />
+                <span class="date-text"
+                  >Update on
+                  <FormattedDate date={pubDate} />
+                  {
+                    updatedDate && (
+                      <div class="last-updated-on">
+                        Last updated on <FormattedDate date={updatedDate} />
+                      </div>
+                    )
+                  }
+                </span>
+              </div>
+            </div>
           </div>
+        </div>
         <div class="hero-image">
           {
             heroImage && (
@@ -316,7 +348,6 @@ main {
           }
         </div>
         <div class="prose">
-
           <slot />
         </div>
       </article>

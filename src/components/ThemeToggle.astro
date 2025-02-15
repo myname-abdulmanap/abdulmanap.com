@@ -56,51 +56,62 @@
 
 
   </style>
-  
+<!--   
   <script>
-    interface ThemeToggle {
-      theme: 'light' | 'dark';
-      setTheme: (theme: 'light' | 'dark') => void;
-      getPreferredTheme: () => 'light' | 'dark';
+   interface ThemeToggle {
+  theme: 'light' | 'dark';
+  setTheme: (theme: 'light' | 'dark') => void;
+  getPreferredTheme: () => 'light' | 'dark';
+}
+
+const themeToggle: ThemeToggle = {
+  theme: (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme') as 'light' | 'dark';
     }
-  
-    const themeToggle: ThemeToggle = {
-      theme: (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme') as 'light' | 'dark';
-        }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
-      })(),
-  
-      setTheme(theme) {
-        localStorage.setItem('theme', theme);
-        document.documentElement.setAttribute('data-theme', theme);
-        this.theme = theme;
-      },
-  
-      getPreferredTheme() {
-        return this.theme;
-      },
-    };
-  
-    // Initialize theme on load
-    document.addEventListener('DOMContentLoaded', () => {
-      themeToggle.setTheme(themeToggle.getPreferredTheme());
-    });
-  
-    // Listen for theme toggle clicks
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      themeToggle.setTheme(isDark ? 'light' : 'dark');
-    });
-  
-    // Listen for system theme changes
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', (e) => {
-        themeToggle.setTheme(e.matches ? 'dark' : 'light');
-      });
-  </script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  })(),
+
+  setTheme(theme) {
+    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    this.theme = theme;
+  },
+
+  getPreferredTheme() {
+    return this.theme;
+  },
+};
+
+const initThemeToggle = () => {
+  // Set theme saat halaman pertama kali dimuat
+  themeToggle.setTheme(themeToggle.getPreferredTheme());
+
+  // Pastikan tombol toggle punya event listener
+  const themeToggleButton = document.getElementById('themeToggle');
+  if (themeToggleButton) {
+    themeToggleButton.removeEventListener("click", toggleTheme); // Hapus event listener lama agar tidak dobel
+    themeToggleButton.addEventListener("click", toggleTheme);
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeToggle.setTheme(isDark ? 'light' : 'dark');
+  }
+
+  // Dengarkan perubahan sistem
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    themeToggle.setTheme(e.matches ? 'dark' : 'light');
+  });
+};
+
+// Jalankan dark mode saat pertama kali dimuat
+document.addEventListener('DOMContentLoaded', initThemeToggle);
+
+// Jalankan dark mode setelah setiap transisi halaman di Astro
+document.addEventListener('astro:after-swap', initThemeToggle);
+
+  </script> -->
