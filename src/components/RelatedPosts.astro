@@ -1,0 +1,96 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const { currentCategory, currentSlug } = Astro.props;
+
+// Ambil semua postingan blog
+const allPosts = await getCollection("blog");
+
+// Fungsi untuk menentukan slug hybrid
+const getSlug = (post: CollectionEntry<"blog">) => post.data.slug || post.id;
+
+// Filter postingan dengan kategori yang sama, kecuali postingan saat ini
+const relatedPosts = allPosts
+  .filter((post) => post.data.category === currentCategory && getSlug(post) !== currentSlug)
+  .slice(0, 3); // Batasi maksimal 3 postingan
+---
+
+
+<section class="related-posts">
+  <h2>Related Posts</h2>
+  <div class="related-posts-container">
+    {relatedPosts.map((post) => (
+      <a href={`/blog/${getSlug(post)}`} class="related-post">
+        <img src={post.data.heroImage} alt={post.data.title} />
+        <h3>{post.data.title}</h3>
+        <p>{post.data.description}</p>
+      </a>
+    ))}
+  </div>
+</section>
+
+
+
+<style>
+  .related-posts {
+    margin-top: 4rem;
+    padding: 2rem;
+    background-color: var(--container-color);
+    border-radius: 10px;
+  }
+
+  .related-posts h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .related-posts-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .related-post {
+    display: block;
+    width: 30%;
+    min-width: 250px;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .related-post:hover {
+    transform: translateY(-5px);
+  }
+
+  .related-post img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .related-post h3 {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .related-post p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .related-posts-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .related-post {
+      width: 90%;
+    }
+  }
+</style>

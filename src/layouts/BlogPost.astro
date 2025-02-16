@@ -5,49 +5,67 @@ import HeaderBlog from "../components/HeaderBlog.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
-
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category } =
+  Astro.props;
 import { ClientRouter } from "astro:transitions";
+
+// Handle both string and array types for category
+const categories = Array.isArray(category) ? category : [category];
 ---
 
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-  
+
     <style>
-      main {
-        width: 100%;
-        max-width: 100%;
-        margin: auto;
-        padding: 3em 1em;
-        background-color: var(--bg-color);
-      }
-      .blog {
-        width: 800px;
-        max-width: calc(100% - 2em);
-        margin: 0 auto;
-        padding: 4em 1em;
-      }
+
+
+    
 
       .hero-image {
         width: 100%;
+        max-width: 1020px;
+        margin: 0 auto;
       }
+
       .hero-image img {
         display: block;
-        margin: 0 auto;
+        width: 100%;
+        height: auto;
         border-radius: 12px;
-        /* box-shadow: var(--box-shadow); */
+        object-fit: cover;
       }
-      .prose {
-        font-size: 1.2rem;
 
-        margin: auto;
-        margin-top: 20px;
-        padding: 1em;
-        color: var(--text-color);
-        opacity: 0.9;
+
+      .prose {
+  width: 100%;
+  max-width: 750px;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        padding: 0.35rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: var(--bg-tags);
+        color: #718096;
+        transition: transform 0.2s ease;
+      }
+
+      .tag:hover {
+        transform: translateY(-2px);
       }
 
       .title {
@@ -218,8 +236,8 @@ import { ClientRouter } from "astro:transitions";
           min-height: 60vh;
         }
 
-        .hero-title {
-          font-size: 2.5rem;
+        .title {
+          font-size: 0.7rem;
         }
 
         .hero-description {
@@ -274,35 +292,11 @@ import { ClientRouter } from "astro:transitions";
   <body>
     <ClientRouter />
     <HeaderBlog />
-
-    <!-- <section class="blog-hero">
-    <div class="hero-container">
-      <div class="category-tag">Personal Blog</div>
-      <h1 class="hero-title fade-in delay-1">
-       {title}
-      </h1>
-      <p class="hero-description fade-in delay-2">
-      {description}
-      </p>
-      <div class="author-section fade-in delay-3">
-        <div class="author-image">
-          <img
-            src="/assets/img/abdul-manap-software-developer.webp"
-            alt="Abdul Manap"
-          />
-        </div>
-        <div class="author-info">
-          <span class="author-name">Abdul Manap</span>
-          <span class="author-title">Software Developer & Tech Enthusiast</span>
-        </div>
-      </div>
-      <div class="stats-section fade-in delay-4">
-		
-      </div>
-    </div>
-</section> -->
     <main>
       <article class="blog">
+        <div class="tags">
+          {categories.map((cat) => <span class="tag">{cat}</span>)}
+        </div>
         <div class="title">
           <h1>
             {title}

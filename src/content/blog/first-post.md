@@ -1,16 +1,53 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
+title: 'Postingan Pertama Memakai Astro Framework'
+description: 'Sebuah artikel yang ditulis dengan markdown style, lebih ringan daripada WordPress!'
 pubDate: 'Jul 08 2022'
 heroImage: '/blog-placeholder-3.jpg'
+category: ["Development", "Astro", "Web"]
+tags: ["development", "astro", "web"]
+slug: "postingan-pertama-dengan-astro"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Menjelajahi dunia pengembangan web kini semakin mudah dengan Astro Framework. Astro adalah framework modern yang memungkinkan pembuatan situs web statis dengan performa optimal dan pengalaman pengguna yang lebih cepat. 
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+Dalam artikel ini, kita akan membahas mengapa Astro menjadi pilihan yang menarik bagi para pengembang web.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+## Apa Itu Astro Framework?
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Astro adalah framework frontend yang dirancang untuk membangun situs statis dengan pendekatan island architecture. Dengan teknologi ini, Astro hanya mengirimkan HTML, CSS, dan JavaScript yang benar-benar diperlukan ke browser, sehingga meningkatkan kecepatan loading halaman.
+
+## Keunggulan Astro Dibandingkan WordPress
+
+1. **Ringan dan Cepat** - Tidak seperti WordPress yang membutuhkan server dan database, Astro menghasilkan halaman statis yang lebih ringan dan cepat.
+2. **Mudah Digunakan** - Dengan sintaks berbasis Markdown dan komponen reusable, Astro mempermudah pengembangan web tanpa kompleksitas berlebihan.
+3. **SEO Friendly** - Kecepatan yang lebih tinggi dan struktur HTML yang lebih bersih membantu meningkatkan peringkat SEO.
+4. **Dukungan Multi-JS Framework** - Astro memungkinkan penggunaan berbagai framework JavaScript seperti React, Vue, dan Svelte dalam satu proyek.
+
+
+## Membuat Proyek Pertama dengan Astro
+
+### 1. Instalasi Astro
+
+```sh
+npm create astro@latest my-astro-project
+cd my-astro-project
+npm install
+```
+
+### 2. Menjalankan Proyek
+
+```sh
+npm run dev
+```
+
+Sekarang, situs Anda sudah bisa diakses melalui `http://localhost:3000`.
+
+### 3. Menulis Artikel dengan Markdown
+
+Astro mendukung Markdown untuk membuat artikel dengan mudah. Cukup buat file `.md` di dalam folder `src/content/blog/` dan tambahkan konten Anda.
+
+Dengan keunggulan-keunggulannya, Astro menjadi pilihan tepat bagi pengembang yang menginginkan kecepatan, efisiensi, dan pengalaman pengguna yang lebih baik. 
+
+Yuk, coba gunakan Astro untuk proyek Anda berikutnya!
+
