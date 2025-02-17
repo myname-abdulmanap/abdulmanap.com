@@ -19,10 +19,14 @@ Astro adalah framework frontend yang dirancang untuk membangun situs statis deng
 
 ## Keunggulan Astro Dibandingkan WordPress
 
-1. **Ringan dan Cepat** - Tidak seperti WordPress yang membutuhkan server dan database, Astro menghasilkan halaman statis yang lebih ringan dan cepat.
-2. **Mudah Digunakan** - Dengan sintaks berbasis Markdown dan komponen reusable, Astro mempermudah pengembangan web tanpa kompleksitas berlebihan.
-3. **SEO Friendly** - Kecepatan yang lebih tinggi dan struktur HTML yang lebih bersih membantu meningkatkan peringkat SEO.
-4. **Dukungan Multi-JS Framework** - Astro memungkinkan penggunaan berbagai framework JavaScript seperti React, Vue, dan Svelte dalam satu proyek.
+1. **Ringan dan Cepat** 
+ Tidak seperti WordPress yang membutuhkan server dan database, Astro menghasilkan halaman statis yang lebih ringan dan cepat.
+2. **Mudah Digunakan** 
+ Dengan sintaks berbasis Markdown dan komponen reusable, Astro mempermudah pengembangan web tanpa kompleksitas berlebihan.
+3. **SEO Friendly** 
+ Kecepatan yang lebih tinggi dan struktur HTML yang lebih bersih membantu meningkatkan peringkat SEO.
+4. **Dukungan Multi-JS Framework** 
+ Astro memungkinkan penggunaan berbagai framework JavaScript seperti React, Vue, dan Svelte dalam satu proyek.
 
 
 ## Membuat Proyek Pertama dengan Astro
