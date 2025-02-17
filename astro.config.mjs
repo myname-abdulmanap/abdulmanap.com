@@ -11,6 +11,7 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
   site: 'https://www.abdulmanap.com',
   integrations: [mdx(), sitemap()],
+  output: 'server',
   adapter: vercel(),
   
   
