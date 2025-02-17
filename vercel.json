@@ -14,11 +14,7 @@
     }
   ],
   "redirects": [
-    {
-      "source": "/",
-      "destination": "https://www.abdulmanap.com",
-      "permanent": true
-    },
+    
     {
       "source": "/(.*)",
       "destination": "/",
