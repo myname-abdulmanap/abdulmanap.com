@@ -15,7 +15,7 @@
   ],
   "redirects": [
     {
-      "source": "https://abdulmanap.com",
+      "source": "/",
       "destination": "https://www.abdulmanap.com",
       "permanent": true
     },
