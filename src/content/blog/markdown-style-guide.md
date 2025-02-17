@@ -1,216 +1,48 @@
 ---
-title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
-pubDate: 'Jun 19 2024'
-heroImage: '/blog-placeholder-1.jpg'
-category: "development"
-slug: "tes-markdown"
+title: 'Why Can You Get Stressed? These are 8 Causes of Severe Stress'
+description: 'Dissect the factors that cause you to be very stressed'
+pubDate: 'Jan 19 2025'
+heroImage: 'https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739817108/why-stress_mkb3xk.jpg'
+category: 'Self-Improvement'
+slug: 'why-can-get-stressed'
 ---
+**Why Do We Experience Stress?**
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Stress is a natural reaction of the body to pressure or challenges we face in daily life. Almost everyone has experienced stress, whether in mild or severe forms. But why do we experience stress? What factors contribute to it? This article will discuss various causes of stress and how they affect our mental and physical health.
 
-## Headings
+### 1. Pressure in Daily Life
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+One of the main causes of stress is the pressure in daily life. A high workload, tight deadlines, family responsibilities, and various social demands can make a person feel overwhelmed. When someone feels they do not have enough time or resources to complete their responsibilities, stress can arise.
 
-# H1
+### 2. Significant Life Changes
 
-## H2
+Major life changes, whether positive or negative, can also trigger stress. For example, marriage, the birth of a child, moving to a new home, or job promotion can cause stress even though they are joyful events. Conversely, losing a job, divorce, or the death of a loved one can trigger even greater stress due to uncertainty and grief.
 
-### H3
+### 3. Financial Problems
 
-#### H4
+Finances often become a primary source of stress for many people. The inability to meet basic needs, mounting debt, or unstable income can cause a person to feel anxious and stressed. Poor financial conditions often lead to difficulty sleeping, irritability, and even health problems due to constant pressure.
 
-##### H5
+### 4. Health Issues
 
-###### H6
+Poor health conditions, whether temporary or chronic, can be a trigger for stress. Prolonged illness, serious injuries, or even concerns about one’s own health or that of family members can lead to prolonged stress. Additionally, stress can worsen a person's health condition, creating a vicious cycle that is difficult to break.
 
-## Paragraph
+### 5. Unsupportive Social Environment
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+Relationships with others also play a crucial role in a person's mental health. Conflicts with a partner, disputes with friends or colleagues, or even feelings of loneliness can be major factors causing stress. A lack of social support can make a person feel alone in facing life's challenges, ultimately increasing the risk of stress.
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+### 6. Unrealistic Expectations
 
-## Images
+Sometimes, stress arises due to unrealistic expectations, whether from oneself or others. Someone who constantly demands perfection in their work or feels the need to please everyone may experience immense pressure. When expectations do not match reality, feelings of disappointment and failure can trigger prolonged stress.
 
-### Syntax
+### 7. Biological and Genetic Factors
 
-```markdown
-![Alt text](./full/or/relative/path/of/image)
-```
+Some people may be more prone to stress than others due to biological and genetic factors. The nervous system and hormones play a role in determining how the body responds to pressure. Individuals with a family history of anxiety disorders or depression may be more susceptible to stress than those without such a history.
 
-### Output
+### 8. Unhealthy Lifestyle
 
-![blog placeholder](/blog-placeholder-about.jpg)
+An unhealthy lifestyle, such as lack of sleep, poor diet, lack of physical activity, and excessive consumption of alcohol or caffeine, can increase the risk of stress. Lack of sleep, for example, can make a person more sensitive to daily pressures, while an unbalanced diet can affect brain health and emotions.
 
-## Blockquotes
+### Conclusion
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+Stress is a natural part of life, but its causes are highly diverse. Life pressures, major changes, financial problems, health, social environment, high expectations, biological factors, and an unhealthy lifestyle can all trigger stress. Understanding the sources of stress is the first step in managing it. With proper stress management, such as maintaining a balanced life, exercising, meditating, and seeking social support, we can reduce the negative impact of stress on our health.
 
-### Blockquote without attribution
-
-#### Syntax
-
-```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-```
-
-#### Output
-
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
-> **Note** that you can use _Markdown syntax_ within a blockquote.
-
-### Blockquote with attribution
-
-#### Syntax
-
-```markdown
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-```
-
-#### Output
-
-> Don't communicate by sharing memory, share memory by communicating.<br>
-> — <cite>Rob Pike[^1]</cite>
-
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
-
-## Tables
-
-### Syntax
-
-```markdown
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-```
-
-### Output
-
-| Italics   | Bold     | Code   |
-| --------- | -------- | ------ |
-| _italics_ | **bold** | `code` |
-
-## Code Blocks
-
-### Syntax
-
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
-
-````markdown
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-````
-
-### Output
-
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Example HTML5 Document</title>
-  </head>
-  <body>
-    <p>Test</p>
-  </body>
-</html>
-```
-
-## List Types
-
-### Ordered List
-
-#### Syntax
-
-```markdown
-1. First item
-2. Second item
-3. Third item
-```
-
-#### Output
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-#### Syntax
-
-```markdown
-- List item
-- Another item
-- And another item
-```
-
-#### Output
-
-- List item
-- Another item
-- And another item
-
-### Nested list
-
-#### Syntax
-
-```markdown
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-```
-
-#### Output
-
-- Fruit
-  - Apple
-  - Orange
-  - Banana
-- Dairy
-  - Milk
-  - Cheese
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-### Syntax
-
-```markdown
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-```
-
-### Output
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.

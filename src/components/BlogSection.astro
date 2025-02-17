@@ -27,7 +27,10 @@ import FormattedDate from "./../components/FormattedDate.astro";
                 />
               </div>
               <div class="content">
-                <time><FormattedDate date={post.data.pubDate} /></time>
+                <time> in {post.data.category instanceof Array
+    ? post.data.category.join(' , ') 
+    : post.data.category 
+  } - <FormattedDate date={post.data.pubDate} /> </time>
                 <h3>{post.data.title}</h3>
                 <p>{post.data.description}</p>
               </div>
