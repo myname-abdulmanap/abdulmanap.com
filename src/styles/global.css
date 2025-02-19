@@ -53,7 +53,7 @@ html {
 
 [data-theme="dark"] {
   --bg-color: #ffffff;
-  --bg-main: #ffffff67;
+  --bg-main: #f9f9f9ce;
   --bg-tags: #f8fafc;
   --text-color: #2d2d2d;
   --heading-color: #000000;
