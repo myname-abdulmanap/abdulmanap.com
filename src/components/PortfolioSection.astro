@@ -3,7 +3,7 @@ interface Portfolio {
   title: string;
   description: string;
   imageUrl: string;
-  category: string;
+  category: string | string[]; 
   tags: string[];
   link: string;
   github?: string;
@@ -11,53 +11,92 @@ interface Portfolio {
 
 const portfolioItems: Portfolio[] = [
   {
-    title: "E-Commerce Website",
-    description: "Modern e-commerce platform dengan fitur pembayaran terintegrasi.",
-    imageUrl: "/blog-placeholder-1.jpg",
+    title: "Personal Website",
+    description: "SEO-optimized portfolio website with blog feature, built for maximum performance and responsiveness.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739874829/PERSONAL_WEBSITE_11zon_vrfcve.png",
     category: "Web Development",
-    tags: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    github: "https://github.com/username/project1",
+    tags: ["Astro SSG", "Typescript", "Markdown", "Vanilla CSS"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739874829/PERSONAL_WEBSITE_11zon_vrfcve.png",
+    github: "https://github.com/myname-abdulmanap/abdulmanap.com",
   },
   {
-    title: "Food Delivery App",
-    description: "Aplikasi mobile untuk pemesanan makanan dengan tracking realtime.",
-    imageUrl: "/blog-placeholder-2.jpg",
-    category: "Mobile Development",
-    tags: ["Flutter", "Firebase", "Maps"],
-    link: "#",
-    github: "https://github.com/username/project2",
-  },
-  {
-    title: "Company Portfolio",
-    description: "Website portfolio perusahaan dengan animasi modern.",
-    imageUrl: "/blog-placeholder-3.jpg", 
+    title: "Presensi Karyawan Web App",
+    description: "Employee attendance system featuring barcode scanning, leave requests, overtime tracking, and automated reporting.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739876771/Presensi_WEBSITE_11zon_az9kee.png",
     category: "Web Development",
-    tags: ["Vue.js", "GSAP", "Tailwind"],
-    link: "#",
-    github: "https://github.com/username/project3",
+    tags: ["PHP Laravel", "Bootstrap", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739876771/Presensi_WEBSITE_11zon_az9kee.png",
+    github: "https://github.com/myname-abdulmanap/presensi_karyawan"
   },
   {
-    title: "Fitness Tracking App",
-    description: "Aplikasi mobile untuk tracking aktivitas fitness.",
-    imageUrl: "/blog-placeholder-4.jpg",
-    category: "Mobile Development", 
-    tags: ["React Native", "Redux"],
-    link: "#",
-    github: "https://github.com/username/project4",
+    title: "Automatic Scalping Trade",
+    description: "High-frequency trading bot that executes rapid trades to profit from small market price movements.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739981641/bot-scalping_11zon_pkgjqe.png",
+    category: "App Development",
+    tags: ["Python", "Tkinter", "API Market"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739981641/bot-scalping_11zon_pkgjqe.png",
+    github: "https://github.com/myname-abdulmanap",
   },
   {
-    title: "UI/UX Design System",
-    description: "Design system lengkap untuk produk digital.",
-    imageUrl: "/blog-placeholder-5.jpg",
-    category: "UI/UX Design",
-    tags: ["Figma", "Design System"],
-    link: "#",
-    github: "https://github.com/username/project5",
+    title: "Company Profile Online Shop",
+    description: "Professional company website integrated with e-commerce functionality for seamless online shopping.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739957095/company-1_11zon_toc1su.png",
+    category: "Web Development",
+    tags: ["WordPress", "WooCommerce", "JQuery", "MySQL"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739957095/company-1_11zon_toc1su.png",
+    github: "https://github.com/myname-abdulmanap",
+  },
+  {
+    title: "PUSLAH - Perpustakaan Sekolah",
+    description: "Digital library system for managing books, student records, and borrowing activities in schools.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739977764/PUSLAH-PERPUSTAKAANN-SEKOLAH_11zon_awjnmo.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Tailwind CSS", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739977764/PUSLAH-PERPUSTAKAANN-SEKOLAH_11zon_awjnmo.png",
+    github: "https://github.com/myname-abdulmanap/puslah-perpustakaan-sekolah-laravel10",
+  },
+  {
+    title: "News Portal Education",
+    description: "Educational news portal delivering latest information using WordPress, MySQL, and jQuery for enhanced user experience.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739959674/edu-portal-naftrik.id_11zon_sg0t79.png",
+    category: "Web Development",
+    tags: ["WordPress", "MySQL", "JQuery"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739959674/edu-portal-naftrik.id_11zon_sg0t79.png",
+    github: "https://github.com/my-name-abdulmanap",
+  },
+  {
+    title: "Admin Dashboard Rumah Sakit",
+    description: "Hospital management system for tracking patient records, medical staff, and operational processes.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739974575/admin-dashboard_11zon_uxpdcy.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Vue JS", "Inertia JS", "Tailwind CSS"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739974575/admin-dashboard_11zon_uxpdcy.png",
+    github: "https://github.com/myname-abdulmanap/rumah-sakit-laravel11",
+  },
+  {
+    title: "Penggajian Sekolah Web App",
+    description: "Automated school payroll system for efficient financial management and transparent accounting.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739979858/PENGGAJIAN-SEKOLAH_11zon_w4taca.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "JQuery", "MySQL", "Bootstrap"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739979858/PENGGAJIAN-SEKOLAH_11zon_w4taca.png",
+    github: "https://github.com/myname-abdulmanap/penggajian_laravel7",
+  },
+  {
+    title: "Arus Kas Sistem Rumah Sakit",
+    description: "Real-time hospital financial tracking system for managing revenue, expenses, and transactions.",
+    imageUrl: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739976288/RumahSakitSistem_b2u45v.png",
+    category: "Web Development",
+    tags: ["PHP Laravel", "Blade", "MySQL", "Bootstrap"],
+    link: "https://res.cloudinary.com/dwkkbhn4z/image/upload/v1739976288/RumahSakitSistem_b2u45v.png",
+    github: "https://github.com/myname-abdulmanap/rumah-sakit-laravel11",
   },
 ];
 
-const categories = ["All", ...new Set(portfolioItems.map((item) => item.category))];
+const categories = [
+  "All",
+  ...new Set(portfolioItems.map((item) => item.category)),
+];
 
 const tagColors = [
   { bg: "rgb(255, 228, 230)", text: "rgb(225, 29, 72)" },
@@ -82,7 +121,10 @@ function getTagColor(tagIndex: number) {
     <div class="filter-tabs fade-in">
       {
         categories.map((category) => (
-          <button class:list={["tab", { active: category === "All" }]} data-category={category}>
+          <button
+            class:list={["tab", { active: category === "All" }]}
+            data-category={category}
+          >
             {category}
           </button>
         ))
@@ -97,11 +139,25 @@ function getTagColor(tagIndex: number) {
               <img src={item.imageUrl} alt={item.title} loading="lazy" />
               <div class="card-overlay">
                 <div class="action-buttons">
-                  <a href={item.link} class="btn-view">View Project</a>
+                  <a href={item.link} class="btn-view">
+                    View Project
+                  </a>
                   {item.github && (
-                    <a href={item.github} class="btn-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    <a
+                      href={item.github}
+                      class="btn-github"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub Repository"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                       </svg>
                     </a>
                   )}
@@ -131,14 +187,11 @@ function getTagColor(tagIndex: number) {
 
 <style>
   .portfolio-section {
-    
-
     padding: 4rem 0;
     background-color: var(--bg-color);
   }
 
   .container {
-
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -318,127 +371,131 @@ function getTagColor(tagIndex: number) {
   .hidden {
     display: none;
   }
-/* Tablet Breakpoint */
-@media (max-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  /* Tablet Breakpoint */
+  @media (max-width: 1024px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card-image {
+      height: 200px;
+    }
   }
 
-  .card-image {
-    height: 200px;
-  }
-}
+  /* Mobile Breakpoint */
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
 
-/* Mobile Breakpoint */
-@media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 2rem;
-  }
+    .section-header p {
+      font-size: 1rem;
+    }
 
-  .section-header p {
-    font-size: 1rem;
-  }
+    .portfolio-grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
 
-  .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-  }
+    .card-image {
+      height: 120px;
+    }
 
-  .card-image {
-    height: 120px;
-  }
+    .card-content {
+      padding: 0.75rem;
+    }
 
-  .card-content {
-    padding: 0.75rem;
-  }
+    .card-content h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+    }
 
-  .card-content h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-  }
+    .card-content p {
+      font-size: 0.75rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-  .card-content p {
-    font-size: 0.75rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+    .tag,
+    .btn-view,
+    .tab {
+      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+    }
 
-  .tag,
-  .btn-view,
-  .tab {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .btn-github {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-/* Small Mobile Breakpoint */
-@media (max-width: 480px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(140px, 1fr));
-    gap: 0.75rem;
+    .btn-github {
+      width: 32px;
+      height: 32px;
+    }
   }
 
-  .card-image {
-    height: 110px;
-  }
+  /* Small Mobile Breakpoint */
+  @media (max-width: 480px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
 
-  .card-content {
-    padding: 0.6rem;
-  }
-  .tag {
-    font-size: 0.6rem;
-    /* padding: 0.4rem 0.8rem; */
+    .card-image {
+      height: 110px;
+    }
 
-  }
-  .btn-view {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.7rem;
-  }
+    .card-content {
+      padding: 0.6rem;
+    }
+    .tag {
+      font-size: 0.6rem;
+      /* padding: 0.4rem 0.8rem; */
+    }
+    .btn-view {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.7rem;
+    }
 
-  .btn-github {
-    width: 28px;
-    height: 28px;
+    .btn-github {
+      width: 28px;
+      height: 28px;
+    }
+
+    
   }
-}
 </style>
 
 <script>
   function initPortfolio() {
-    const tabs = document.querySelectorAll('.tab');
-    const cards = document.querySelectorAll('.card');
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".card");
 
     function filterProjects(category: string) {
-      cards.forEach(card => {
-        if (category === 'All' || card.getAttribute('data-category') === category) {
-          card.classList.remove('hidden');
+      cards.forEach((card) => {
+        if (
+          category === "All" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.classList.remove("hidden");
         } else {
-          card.classList.add('hidden');
+          card.classList.add("hidden");
         }
       });
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const category = tab.getAttribute('data-category') || 'All';
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const category = tab.getAttribute("data-category") || "All";
         filterProjects(category);
       });
     });
   }
 
   // For Astro, we need to ensure the script runs after hydration
-  document.addEventListener('astro:page-load', initPortfolio);
+  document.addEventListener("astro:page-load", initPortfolio);
   // Also run on initial load for dev mode
-  document.addEventListener('DOMContentLoaded', initPortfolio);
+  document.addEventListener("DOMContentLoaded", initPortfolio);
 </script>
