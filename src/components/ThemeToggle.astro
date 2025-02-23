@@ -22,16 +22,16 @@
   </button>
   
   <style>
-   /* Styling untuk theme-toggle button */
+
 .theme-toggle {
   border: none;
   background-color: rgb(244, 230, 181);
   cursor: pointer;
-  padding: 5px; /* Mengurangi padding untuk lebih ramping */
+  padding: 5px; 
   border-radius: 10px;
   transition: background-color 0.3s;
-  margin-left: 10px; /* Pastikan ada sedikit jarak antara ikon dan tombol */
-  margin-right: 0;  /* Mengurangi jarak kanan tombol */
+  margin-left: 10px; 
+  margin-right: 0; 
 }
 
 /* Style untuk ikon theme (sun dan moon) */
@@ -43,7 +43,6 @@
   fill: none;
 }
 
-/* Mengubah fill icon berdasarkan tema */
 :global([data-theme="dark"]) .sun {
   fill: none;
 }
@@ -90,7 +89,7 @@ const initThemeToggle = () => {
   // Set theme saat halaman pertama kali dimuat
   themeToggle.setTheme(themeToggle.getPreferredTheme());
 
-  // Pastikan tombol toggle punya event listener
+
   const themeToggleButton = document.getElementById('themeToggle');
   if (themeToggleButton) {
     themeToggleButton.removeEventListener("click", toggleTheme); // Hapus event listener lama agar tidak dobel
@@ -102,16 +101,16 @@ const initThemeToggle = () => {
     themeToggle.setTheme(isDark ? 'light' : 'dark');
   }
 
-  // Dengarkan perubahan sistem
+
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     themeToggle.setTheme(e.matches ? 'dark' : 'light');
   });
 };
 
-// Jalankan dark mode saat pertama kali dimuat
+
 document.addEventListener('DOMContentLoaded', initThemeToggle);
 
-// Jalankan dark mode setelah setiap transisi halaman di Astro
+
 document.addEventListener('astro:after-swap', initThemeToggle);
 
   </script> -->
